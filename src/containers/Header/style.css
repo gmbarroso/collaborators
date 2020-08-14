@@ -1,0 +1,27 @@
+/* body {
+  background-color: #e5e5e5 !important;
+} */
+
+.header {
+  display: flex;
+  padding: 8px 48px;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  background-color: #4B0082;
+  color: white;
+  margin-bottom: 48px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 2.0rem;
+  }
+}
