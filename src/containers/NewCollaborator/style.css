@@ -1,0 +1,28 @@
+.newContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 300px 48px 300px;
+}
+
+.photo {
+    width: 100px;
+    flex-grow: 2;
+}
+
+form {
+    flex-grow: 3;
+}
+
+.backBtn, h3 {
+    margin: 0 0 48px 300px;
+}
+
+.form-group input {
+    margin-bottom: 48px;
+}
+
+.submitDiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 48px;
+}

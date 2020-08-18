@@ -3,7 +3,8 @@ import React, { Fragment } from 'react'
 
 import {
   Header,
-  Home
+  Home,
+  NewCollaborator
 } from '../../containers'
 
 import {
@@ -26,6 +27,7 @@ const Root = () => {
       </Switch> */}
       <HashRouter>
         <Route exact path="/" component={() => <Home />} />
+        <Route exact path="/new-collaborator" component={() => <NewCollaborator />} />
       </HashRouter>
     </Fragment>
   )
