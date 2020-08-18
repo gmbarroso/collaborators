@@ -2,34 +2,49 @@ import React from 'react'
 
 import './style.css'
 
-const renderColumns = columns => (
+const renderTableHeader = columns => (
     columns.map((column, index) => {
-        return <th key={index}>{column.charAt(0).toUpperCase()}{column.slice(1)}</th>
+        return <th key={index} className={`th${index}`}>{column.charAt(0).toUpperCase()}{column.slice(1)}</th>
     })
 )
 
-const Table = ({ columns }) => (
+const renderTableBody = (headers, data) => {
+    const renderRow = (row, headers) => {
+        return (
+            <tr key={`tr${row.id}`}>
+                { headers.map((value, index) => {
+                    const rowStyle = { display: 'none'}
+
+                    if(index === 0) {
+                        return <td key={`td${row.id}`} style={rowStyle}>{row[value]}</td>
+                    }
+
+                    return <td key={index}>{row[value]}</td>
+                    })
+                }
+            </tr>
+        )
+    }
+    
+    return (
+        <tbody>
+            { data && data.map((value) => {
+                return renderRow(value, headers);
+                })
+            }
+        </tbody>
+    )
+}
+
+const Table = ({ columns, data }) => (
     <div className="tableContainer">
         <table className="table table-bordered table-striped table-hover">
           <thead>
               <tr>
-                  {renderColumns(columns)}
+                  {renderTableHeader(columns)}
               </tr>
           </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-            </tr>
-          </tbody>
+          {renderTableBody(columns, data)}
         </table>
     </div>
 )

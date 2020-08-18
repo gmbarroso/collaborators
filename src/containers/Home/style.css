@@ -15,10 +15,6 @@
     margin: 0 48px 48px 48px;
 }
 
-.tableContainer {
-    margin: 48px;
-}
-
 @media screen and (max-width: 768px) {
     .home {
       flex-direction: column;
