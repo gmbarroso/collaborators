@@ -10,15 +10,15 @@
         "id": 2,
         "name": "Marcela",
         "position": "CEO",
-        "cpf": "222.222.222-11",
-        "email": "barroso.guilherme@gmail.com"
+        "cpf": "222.222.222-22",
+        "email": "marcela@gmail.com"
     },
     {
         "id": 3,
         "name": "Benício",
         "position": "Developer",
-        "cpf": "333.333.333-11",
-        "email": "barroso.guilherme@gmail.com"
+        "cpf": "333.333.333-33",
+        "email": "benicio@gmail.com"
     },
     {
         "id": 4,

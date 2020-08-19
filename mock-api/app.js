@@ -50,7 +50,10 @@ app.get('/collaborators', (req, res) => {
   res.send(collaborators)
 })
 
-app.get('/:id')
+app.get('/collaborators/:id', (req, res) => {
+  const collaborator = getCollaboratorById(req, res)
+  res.send(collaborator)
+})
 
 app.post('/collaborators', (req, res) => {
   const result = validateCollaboratorsObj(req, res)
@@ -80,6 +83,24 @@ app.post('/collaborators', (req, res) => {
   console.log(collaborator)
 
   collaborators.push(collaborator)
+  res.send(collaborator)
+})
+
+app.put('/collaborators/:id', (req, res) => {
+  const collaborator = getCollaboratorById(req, res)
+
+  // const { error } = validateCollaboratorsObj(req, res)
+  // if (error) {
+  //   console.log(error)
+  //   return res.status(400).send(error.details[0].message)
+  // }
+
+  collaborator.name = req.body.name
+  collaborator.position = req.body.position
+  collaborator.cpf = req.body.cpf
+  collaborator.email = req.body.email
+
+  console.log(collaborator)
   res.send(collaborator)
 })
 
