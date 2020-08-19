@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import { useRouter, useForm } from '../../hooks'
 import {
@@ -52,9 +52,11 @@ const NewCollaborator = ({ collaborator }) => {
     }
 
     return(
-        <div className="new">
-            <Button type="button" className="backBtn" variant="primary" size="sm" onClick={onBack}> Voltar </Button>
-            <h3>New Collaborator</h3>
+        <Fragment>
+            <div className="new">
+                <Button type="button" className="backBtn" variant="primary" size="sm" onClick={onBack}> Voltar </Button>
+                <h3>New Collaborator</h3>
+            </div>
             <div className="newContainer">
                 <div className="photo">
                     Foto
@@ -131,7 +133,7 @@ const NewCollaborator = ({ collaborator }) => {
                     </div>
                 </Form>
             </div>
-        </div>
+        </Fragment>
     )
 }
 

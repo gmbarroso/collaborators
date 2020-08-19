@@ -18,6 +18,17 @@
 @media screen and (max-width: 768px) {
     .home {
       flex-direction: column;
+      align-items: center;
       justify-content: center;
+    }
+
+    .searchContainer {
+        flex-direction: column-reverse;
+        justify-content: center;
+        margin-bottom : 16px;
+    }
+
+    .newCollaboratorBtn {
+        margin-bottom: 48px;
     }
 }

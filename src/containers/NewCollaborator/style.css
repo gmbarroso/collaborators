@@ -1,3 +1,9 @@
+.new {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 48px 300px;
+}
+
 .newContainer {
     display: flex;
     justify-content: space-between;
@@ -13,8 +19,9 @@ form {
     flex-grow: 3;
 }
 
-.backBtn, h3 {
-    margin: 0 0 48px 300px;
+.backBtn {
+    width: 68px;
+    margin-bottom: 48px;
 }
 
 .form-group input {
@@ -25,4 +32,17 @@ form {
     display: flex;
     justify-content: flex-end;
     margin-top: 48px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .newContainer, .new {
+        margin: 0 0 48px 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .submitDiv {
+        justify-content: center;
+    }
 }

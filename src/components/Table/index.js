@@ -49,7 +49,7 @@ const Table = ({ columns, data, onClick }) => {
     }
 
     return (
-        <div className="tableContainer">
+        <div id="tableContainer" className="tableContainer">
             <table className="table table-bordered table-striped table-hover">
               <thead>
                   <tr>

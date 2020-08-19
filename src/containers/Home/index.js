@@ -31,7 +31,7 @@ const Home = ({ handleId, updatedData }) => {
                 <input type="text" placeholder="Search.." name="search" />
                 <button type="submit"><i className="fa fa-search"></i></button>
               </form>
-            <Button variant="primary" size="sm" onClick={onClickNewCollaborators}> Novo Colaborador </Button>
+            <Button className="newCollaboratorBtn" variant="primary" size="sm" onClick={onClickNewCollaborators}> Novo Colaborador </Button>
           </div>
           <div className="content">
             <Table
