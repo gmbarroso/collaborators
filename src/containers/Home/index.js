@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
 
-const Home = props => {
+const Home = ({ handleId, updatedData }) => {
   const [ collaborators, setCollaborators ] = useState(null)
   const router = useRouter()
 
@@ -37,6 +37,7 @@ const Home = props => {
             <Table
                 columns = { Object.keys(columns) }
                 data = {collaborators}
+                onClick = {handleId}
             />
           </div>
       </div>

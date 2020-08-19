@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { useRouter, useForm } from '../../hooks'
 import {
@@ -6,47 +6,51 @@ import {
     Form,
     InputGroup
 } from 'react-bootstrap'
-import { postCollaborators } from '../../requests'
+import { postCollaborators, updateCollaborator } from '../../requests'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
 
-const NewCollaborator = () => {
+const NewCollaborator = ({ collaborator }) => {
     const router = useRouter()
     const initialValues = {
-        name: "",
-        position: "",
-        cpf: "",
-        email: ""
+        name: collaborator ? collaborator.name : "",
+        position: collaborator ? collaborator.position : "",
+        cpf: collaborator ? collaborator.cpf : "",
+        email: collaborator ? collaborator.email : ""
     }
     const {
         values,
-        errors,
-        touched,
+        // errors,
+        // touched,
         validated,
         handleChange,
-        handleBlur,
+        // handleBlur,
         handleSubmit
     } = useForm({
         initialValues,
         onSubmit: values => ({ values })
     })
 
-    const onBack = (e) => {
-        return router.push('/')
-    }
+    const onBack = (e) => router.push('/')
 
     const onSubmitAndValid = (e) => {
         const entries = Object.values(values)
         const findEmpty = entries.find(value => value === "")
 
-        if(findEmpty === undefined && validated) {
-            postCollaborators(values)
-            return router.push('/')
+        if(!collaborator) {
+            if(findEmpty === undefined && validated) {
+                postCollaborators(values)
+                return router.push('/')
+            }
+        } else {
+            if(findEmpty === undefined && validated) {
+                updateCollaborator(collaborator.id, values)
+                return router.push('/')
+            }
         }
-
     }
-    
+
     return(
         <div className="new">
             <Button type="button" className="backBtn" variant="primary" size="sm" onClick={onBack}> Voltar </Button>

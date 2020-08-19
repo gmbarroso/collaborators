@@ -5,3 +5,7 @@
 .th0 {
     display: none;
 }
+
+tr:hover {
+    cursor: pointer;
+}
