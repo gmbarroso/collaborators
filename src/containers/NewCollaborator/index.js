@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import { useRouter, useForm } from '../../hooks'
 import {
@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
 
 const NewCollaborator = ({ collaborator }) => {
+    const [ hasId, setHasId ] = useState(collaborator ? true : false)
     const router = useRouter()
     const initialValues = {
         name: collaborator ? collaborator.name : "",
@@ -31,6 +32,12 @@ const NewCollaborator = ({ collaborator }) => {
         initialValues,
         onSubmit: values => ({ values })
     })
+
+    const handleDisabled = () => {
+        if(hasId) {
+            setHasId(false)
+        } 
+    }
 
     const onBack = (e) => router.push('/')
 
@@ -56,6 +63,7 @@ const NewCollaborator = ({ collaborator }) => {
             <div className="new">
                 <Button type="button" className="backBtn" variant="primary" size="sm" onClick={onBack}> Voltar </Button>
                 <h3>New Collaborator</h3>
+                {/* <Button type="button" onClick={handleDisabled}>Submit form</Button> */}
             </div>
             <div className="newContainer">
                 <div className="photo">
@@ -72,6 +80,7 @@ const NewCollaborator = ({ collaborator }) => {
                                 placeholder="Digite seu nome"
                                 onChange={handleChange}
                                 value={values.name}
+                                disabled={hasId}
                             />
                             <Form.Control.Feedback type="invalid">
                                 Please choose a username.
@@ -88,6 +97,7 @@ const NewCollaborator = ({ collaborator }) => {
                                 placeholder="Qual a posição dele/a na equipe?"
                                 onChange={handleChange}
                                 value={values.position}
+                                disabled={hasId}
                             />
                             <Form.Control.Feedback type="invalid">
                                 Please choose a username.
@@ -105,6 +115,7 @@ const NewCollaborator = ({ collaborator }) => {
                             onChange={handleChange}
                             value={values.cpf}
                             required
+                            disabled={hasId}
                         />
                         <Form.Control.Feedback type="invalid">
                             Please choose a username.
@@ -122,6 +133,7 @@ const NewCollaborator = ({ collaborator }) => {
                             onChange={handleChange}
                             value={values.email}
                             required
+                            disabled={hasId}
                         />
                         <Form.Control.Feedback type="invalid">
                             Please choose a username.

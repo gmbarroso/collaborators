@@ -1,7 +1,9 @@
-import Table from './Table'
-import Log from './Log'
+import Table from './TableComponent'
+import Log from './LogComponent'
+import Search from './SearchComponent'
 
 export {
     Table,
-    Log
+    Log,
+    Search
 }
