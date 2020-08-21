@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import { useRouter } from '../../hooks'
 import columns from '../../json/columns.json'
 import { getCollaborators } from '../../requests/'
+import { useTranslation } from 'react-i18next'
 import {
   Table,
   Search,
@@ -14,6 +15,7 @@ import './style.css'
 const array = []
 
 const Home = ({ handleId }) => {
+  const { t } = useTranslation('common')
   const [ collaborators, setCollaborators ] = useState(array)
   // const { next, prev, jump, currentData, currentPage, maxPage } = usePagination()
 
@@ -54,7 +56,7 @@ const Home = ({ handleId }) => {
       <div className="home">
           <div className="searchContainer">
             <Search search={handleSearch} />
-            <Button className="newCollaboratorBtn" variant="primary" size="sm" onClick={onClickNewCollaborators}> Novo Colaborador </Button>
+            <Button className="newCollaboratorBtn" variant="primary" size="sm" onClick={onClickNewCollaborators}> { t('home.newCollaboratorBtn') } </Button>
           </div>
           <div className="content">
             <Table

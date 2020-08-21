@@ -1,17 +1,23 @@
 import React, { Fragment, useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import { useRouter, useForm } from '../../hooks'
+import { useTranslation } from 'react-i18next'
 import {
     Button,
     Form,
     InputGroup
 } from 'react-bootstrap'
-import { postCollaborators, updateCollaborator } from '../../requests'
+import {
+    postCollaborators,
+    updateCollaborator,
+    deleteCollaborator
+} from '../../requests'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
 
 const NewCollaborator = ({ collaborator }) => {
+    const { t } = useTranslation('common')
     const [ hasId, setHasId ] = useState(collaborator ? true : false)
     const router = useRouter()
     const initialValues = {
@@ -58,13 +64,18 @@ const NewCollaborator = ({ collaborator }) => {
         }
     }
 
+    const deleteOnClick = (e) => {
+        deleteCollaborator(collaborator.id)
+        return router.push('/')
+    }
+
     return(
         <Fragment>
             <div className="new">
-                <span type="button" className="backBtn" variant="primary" size="sm" onClick={onBack}><strong>Go back</strong></span>
+                <span type="button" className="backBtn" variant="primary" size="sm" onClick={onBack}><strong>{t('newCollaborator.buttons.goBack')}</strong></span>
                 <div className="headerNew">
-                    <h3>New Collaborator</h3>
-                    <Button type="button" className="editBtn" size="sm" onClick={handleDisabled} disabled={!hasId}>Edit Collaborator</Button>
+                    <h3>{t('newCollaborator.title')}</h3>
+                    <Button type="button" className="editBtn" size="sm" onClick={handleDisabled} disabled={!hasId}>{t('newCollaborator.buttons.edit')}</Button>
                 </div>
             </div>
             <div className="newContainer">
@@ -73,46 +84,46 @@ const NewCollaborator = ({ collaborator }) => {
                 </div>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Form.Group controlId="name">
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label>{t('newCollaborator.labels.name')}</Form.Label>
                         <InputGroup>
                             <Form.Control
                                 required
                                 name="name"
                                 type="text"
-                                placeholder="Type the collaborator name"
+                                placeholder={t('newCollaborator.inputs.name')}
                                 onChange={handleChange}
                                 value={values.name}
                                 disabled={hasId}
                             />
                             <Form.Control.Feedback type="invalid">
-                                This name is not valid
+                                {t('newCollaborator.errorMessages.default')}
                             </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
                     <Form.Group controlId="position">
-                        <Form.Label>Position</Form.Label>
+                        <Form.Label>{t('newCollaborator.labels.position')}</Form.Label>
                         <InputGroup>
                             <Form.Control
                                 required
                                 name="position"
                                 type="text"
-                                placeholder="Type the collaborator position"
+                                placeholder={t('newCollaborator.inputs.position')}
                                 onChange={handleChange}
                                 value={values.position}
                                 disabled={hasId}
                             />
                             <Form.Control.Feedback type="invalid">
-                                This position is not valid
+                                {t('newCollaborator.labels.position')}
                             </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
                     <Form.Group controlId="cpf">
-                        <Form.Label>CPF</Form.Label>
+                        <Form.Label>{t('newCollaborator.labels.cpf')}</Form.Label>
                         <InputGroup>
                         <Form.Control
                             type="text"
                             name="cpf"
-                            placeholder="His / Her CPF"
+                            placeholder={t('newCollaborator.inputs.cpf')}
                             aria-describedby="inputGroupPrepend"
                             onChange={handleChange}
                             value={values.cpf}
@@ -120,17 +131,17 @@ const NewCollaborator = ({ collaborator }) => {
                             disabled={hasId}
                         />
                         <Form.Control.Feedback type="invalid">
-                            This CPF is not valid
+                            {t('newCollaborator.labels.position')}
                         </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
                     <Form.Group controlId="email">
-                        <Form.Label>E-mail</Form.Label>
+                        <Form.Label>{t('newCollaborator.labels.email')}</Form.Label>
                         <InputGroup>
                         <Form.Control
                             type="email"
                             name="email"
-                            placeholder="What about his / her e-mail"
+                            placeholder={t('newCollaborator.inputs.email')}
                             aria-describedby="inputGroupPrepend"
                             onChange={handleChange}
                             value={values.email}
@@ -138,13 +149,14 @@ const NewCollaborator = ({ collaborator }) => {
                             disabled={hasId}
                         />
                         <Form.Control.Feedback type="invalid">
-                            This e-mail is not valid
+                            {t('newCollaborator.invalidEmail')}
                         </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>   
                     <div className="submitDiv">
+                        <Button type="button" className="deleteBtn" variant="primary" size="sm" onClick={deleteOnClick} disabled={!hasId}><strong>{t('newCollaborator.buttons.delete')}</strong></Button>
                         <Button type="submit" size="sm" className="checkSubmitBtn" onClick={onSubmitAndValid}>
-                            {!validated  ? 'Check values' : 'Submit changes'}
+                            {!validated  ? `${t('newCollaborator.buttons.checkValues')}` : `${t('newCollaborator.buttons.submit')}`}
                         </Button>
                     </div>
                 </Form>

@@ -1,0 +1,44 @@
+{
+    "home": {
+        "newCollaboratorBtn": "New collaborator"
+    },
+    "search": {
+        "searchBtn": "Search"
+    },
+    "table": {
+        "name": "Name",
+        "position": "Position",
+        "cpf": "CPF",
+        "email": "E-mail"
+    },
+    "pagination": {
+        "collaboratorsPerPage": "Collaborators per page: ",
+        "numberOfCollaborators": "Number of collaborators: "
+    },
+    "newCollaborator": {
+        "title": "New collaborator",
+        "labels": {
+            "name": "Name",
+            "position": "Position",
+            "cpf": "CPF",
+            "email": "E-mail"
+        },
+        "inputs": {
+            "name": "Type the name of the collaborator",
+            "position": "Type the position of the collaborator",
+            "cpf": "Type the CPF of the collaborator",
+            "email": "Type the e-mail of the collaborator"
+        },
+        "errorMessages": {
+            "default": "This field must be filled",
+            "email": "Type a valid e-mail"
+        },
+        "buttons": {
+            "goBack": "Go back",
+            "edit": "Edit collaborator",
+            "delete": "Delete collaborator",
+            "checkValues": "Check values",
+            "submit": "Submit"
+        }
+    }
+}

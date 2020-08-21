@@ -2,20 +2,40 @@ import React, { useState } from 'react'
 import { getCollaboratorById } from '../../requests'
 import { useRouter } from '../../hooks'
 import { Pagination } from '../../components'
+import { useTranslation } from 'react-i18next'
 
 import './style.css'
 
 const Table = ({ columns, data, onClick }) => {   
     const pageSize = 10
-    const [currentPage, setCurrentPage] = useState(0)
+    const [ currentPage, setCurrentPage ] = useState(0)
     const router = useRouter()
     const startPointer = currentPage * pageSize;
     const endPointer = startPointer + pageSize
     let dataPerPage = data.slice(startPointer, endPointer)
+    const { t } = useTranslation('common')
+
+    const handleColumnTranslation = column => {
+        switch(column) {
+            case 'name':
+                return t('table.name')
+            case 'position':
+                return t('table.position')
+            case 'cpf':
+                return t('table.cpf')
+            case 'email':
+                return t('table.email')
+            default:
+                return null
+        }
+    }
+
+    console.log(handleColumnTranslation('name'))
 
     const renderTableHeader = columns => (
         columns.map((column, index) => {
-            return <th key={index} className={`th${index}`}>{column.charAt(0).toUpperCase()}{column.slice(1)}</th>
+            console.log(column)
+            return <th key={index} className={`th${index}`}>{handleColumnTranslation(column)}</th>
         })
     )
 

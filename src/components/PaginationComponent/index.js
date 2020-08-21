@@ -1,14 +1,17 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
+import { useTranslation } from 'react-i18next'
 
 import './style.css'
 
 const Pagination = ({ page, setPage, size, totalItems, itemPerPage }) => {
+  const { t } = useTranslation('common')
+
   return (
     <div className="paginator">
       <div className="paginationText">
-        <span>Collaborators per page: {itemPerPage}</span>
-        <span>Number of collaborators: {totalItems}</span>
+        <span>{t('pagination.collaboratorsPerPage')}{itemPerPage}</span>
+        <span>{t('pagination.numberOfCollaborators')}{totalItems}</span>
       </div>
       {
         Array(size).fill(0).map((_, i) => (
