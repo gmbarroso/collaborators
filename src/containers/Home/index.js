@@ -1,16 +1,21 @@
-import React, { useState, useEffect, useCallback, Fragment } from 'react';
+import React, { useState, useEffect, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import { useRouter } from '../../hooks'
 import columns from '../../json/columns.json'
 import { getCollaborators } from '../../requests/'
-import { Table, Search } from '../../components'
+import {
+  Table,
+  Search,
+} from '../../components'
 import { Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './style.css'
 
+const array = []
+
 const Home = ({ handleId }) => {
-  const [ collaborators, setCollaborators ] = useState(null)
-  const [ foundValue, setFoundValue ] = useState(false)
+  const [ collaborators, setCollaborators ] = useState(array)
+  // const { next, prev, jump, currentData, currentPage, maxPage } = usePagination()
 
   const router = useRouter()
 
@@ -24,17 +29,12 @@ const Home = ({ handleId }) => {
   }
 
   const handleSearch = searchValue => {
+    console.log(collaborators.map(c=>c))
     const searchedObjectValues = collaborators.filter(collaborator => {
       const name = collaborator.name.toLowerCase().includes(searchValue.toLowerCase())
       const position = collaborator.position.toLowerCase().includes(searchValue.toLowerCase())
       const cpf = collaborator.cpf.toLowerCase().includes(searchValue.toLowerCase())
       const email = collaborator.email.toLowerCase().includes(searchValue.toLowerCase())
-
-      if(name || position || cpf || email) {
-        setFoundValue(true)
-      } else {
-        setFoundValue(false)
-      }
 
       return name || position || cpf || email
     })
@@ -45,12 +45,10 @@ const Home = ({ handleId }) => {
       setCollaborators(searchedObjectValues)
     }
   }
-
+  
   useEffect(() => {
-    if(collaborators === null) {
-      getArray()
-    }
-  })
+    getArray()
+  }, [])
 
   return (
     <Fragment>

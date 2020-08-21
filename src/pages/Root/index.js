@@ -16,10 +16,8 @@ import {
 const Root = (props) => {
   const collaboratorIdArray = props.location.hash.split('/')
   const [ collaborator, setCollaborator ] = useState(null)
-  const [ id, setId ] = useState(null)
 
   const handleId = (data, id) => {
-    setId(id)
     const findedCollaborator = data.find(c => {
       return c.id === id
     })

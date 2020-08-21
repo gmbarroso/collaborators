@@ -33,11 +33,11 @@ const NewCollaborator = ({ collaborator }) => {
         onSubmit: values => ({ values })
     })
 
-    const handleDisabled = () => {
-        if(hasId) {
-            setHasId(false)
-        } 
-    }
+    // const handleDisabled = () => {
+    //     if(hasId) {
+    //         setHasId(false)
+    //     } 
+    // }
 
     const onBack = (e) => router.push('/')
 

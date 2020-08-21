@@ -208,5 +208,145 @@
         "position": "Developer",
         "cpf": "101.010.101-01",
         "email": "darth.vader@starwars.com"
+    },
+    {
+        "id": 11,
+        "name": "William",
+        "position": "Developer",
+        "cpf": "111.111.111-11",
+        "email": "barroso.guilherme@gmail.com"
+    },
+    {
+        "id": 12,
+        "name": "Jessie",
+        "position": "CEO",
+        "cpf": "222.222.222-22",
+        "email": "marcela@gmail.com"
+    },
+    {
+        "id": 13,
+        "name": "Benício",
+        "position": "Developer",
+        "cpf": "333.333.333-33",
+        "email": "benicio@gmail.com"
+    },
+    {
+        "id": 14,
+        "name": "Geddy Lee",
+        "position": "Bass",
+        "cpf": "444.444.444-44",
+        "email": "geddy.lee@rush.com"
+    },
+    {
+        "id": 15,
+        "name": "Alex Lifeson",
+        "position": "Guitar",
+        "cpf": "555.555.555-55",
+        "email": "alex.lefeson@rush.com"
+    },
+    {
+        "id": 16,
+        "name": "Nikko MacBrain",
+        "position": "Drums",
+        "cpf": "666.666.666-66",
+        "email": "nwil.peart@rush.com"
+    },
+    {
+        "id": 17,
+        "name": "Luke Skywalker",
+        "position": "Jedi",
+        "cpf": "777.777.777-77",
+        "email": "luke.skywalker@starwars.com"
+    },
+    {
+        "id": 18,
+        "name": "Han Solo",
+        "position": "Bouty Hunter",
+        "cpf": "888.888.888-88",
+        "email": "han.solo@starwars.com"
+    },
+    {
+        "id": 19,
+        "name": "Leia",
+        "position": "Princess",
+        "cpf": "999.999.999-99",
+        "email": "princess.leia@starwars.com"
+    },
+    {
+        "id": 20,
+        "name": "Darth Vader",
+        "position": "Sith",
+        "cpf": "101.010.101-01",
+        "email": "darth.vader@starwars.com"
+    },
+    {
+        "id": 21,
+        "name": "Billy",
+        "position": "Developer",
+        "cpf": "111.111.111-11",
+        "email": "barroso.guilherme@gmail.com"
+    },
+    {
+        "id": 22,
+        "name": "Rambo",
+        "position": "CEO",
+        "cpf": "222.222.222-22",
+        "email": "marcela@gmail.com"
+    },
+    {
+        "id": 23,
+        "name": "Benício",
+        "position": "Developer",
+        "cpf": "333.333.333-33",
+        "email": "benicio@gmail.com"
+    },
+    {
+        "id": 24,
+        "name": "Geddy Lee",
+        "position": "Bass",
+        "cpf": "444.444.444-44",
+        "email": "geddy.lee@rush.com"
+    },
+    {
+        "id": 25,
+        "name": "Alex Lifeson",
+        "position": "Guitar",
+        "cpf": "555.555.555-55",
+        "email": "alex.lefeson@rush.com"
+    },
+    {
+        "id": 26,
+        "name": "Gambit",
+        "position": "Drums",
+        "cpf": "666.666.666-66",
+        "email": "nwil.peart@rush.com"
+    },
+    {
+        "id": 27,
+        "name": "Scott Summers",
+        "position": "Jedi",
+        "cpf": "777.777.777-77",
+        "email": "luke.skywalker@starwars.com"
+    },
+    {
+        "id": 28,
+        "name": "Han Solo",
+        "position": "Bouty Hunter",
+        "cpf": "888.888.888-88",
+        "email": "han.solo@starwars.com"
+    },
+    {
+        "id": 29,
+        "name": "Leia",
+        "position": "Princess",
+        "cpf": "999.999.999-99",
+        "email": "princess.leia@starwars.com"
+    },
+    {
+        "id": 30,
+        "name": "Darth Vader",
+        "position": "Sith",
+        "cpf": "101.010.101-01",
+        "email": "darth.vader@starwars.com"
     }
 ]

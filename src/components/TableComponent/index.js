@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { getCollaboratorById } from '../../requests'
 import { useRouter } from '../../hooks'
+import { Pagination } from '../../components'
 
 import './style.css'
 
 const Table = ({ columns, data, onClick }) => {
+    
+    const pageSize = 5
+    const [currentPage, setCurrentPage] = useState(0)
+    const [ updateData, setUpdateData ] = useState(data)
     const router = useRouter()
     const renderTableHeader = columns => (
         columns.map((column, index) => {
@@ -12,6 +17,12 @@ const Table = ({ columns, data, onClick }) => {
         })
     )
     
+    const startPointer = currentPage * pageSize;
+    const endPointer = startPointer + pageSize
+    let dataPerPage = data.slice(startPointer, endPointer)
+
+    console.log(dataPerPage)
+
     const renderTableBody = (headers, data) => {
         const goToCollaborator = id => {
             getCollaboratorById(id)
@@ -40,7 +51,7 @@ const Table = ({ columns, data, onClick }) => {
         
         return (
             <tbody>
-                { data && data.map((value) => {
+                { data.map((value) => {
                     return renderRow(value, headers);
                     })
                 }
@@ -56,8 +67,15 @@ const Table = ({ columns, data, onClick }) => {
                       {renderTableHeader(columns)}
                   </tr>
               </thead>
-              {renderTableBody(columns, data)}
+              {renderTableBody(columns, dataPerPage)}
             </table>
+            <Pagination
+                page = {currentPage}
+                setPage = {setCurrentPage}
+                size = {Math.ceil(data.length / pageSize)}
+                totalItems = {data.length}
+                itemPerPage = {dataPerPage.length}
+            />
         </div>
     )
 }
