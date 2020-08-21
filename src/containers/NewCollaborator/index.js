@@ -75,7 +75,9 @@ const NewCollaborator = ({ collaborator }) => {
                 <span type="button" className="backBtn" variant="primary" size="sm" onClick={onBack}><strong>{t('newCollaborator.buttons.goBack')}</strong></span>
                 <div className="headerNew">
                     <h3>{t('newCollaborator.title')}</h3>
-                    <Button type="button" className="editBtn" size="sm" onClick={handleDisabled} disabled={!hasId}>{t('newCollaborator.buttons.edit')}</Button>
+                    {collaborator &&
+                        <Button type="button" className="editBtn" size="sm" onClick={handleDisabled} disabled={!hasId}>{t('newCollaborator.buttons.edit')}</Button>
+                    }
                 </div>
             </div>
             <div className="newContainer">
@@ -153,9 +155,9 @@ const NewCollaborator = ({ collaborator }) => {
                         </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>   
-                    <div className="submitDiv">
-                        <Button type="button" className="deleteBtn" variant="primary" size="sm" onClick={deleteOnClick} disabled={!hasId}><strong>{t('newCollaborator.buttons.delete')}</strong></Button>
-                        <Button type="submit" size="sm" className="checkSubmitBtn" onClick={onSubmitAndValid}>
+                    <div className="submitDiv" style={!hasId ? {justifyContent: 'flex-end'} : {justifyContent: 'space-between'}}>
+                        <Button type="button" style={hasId ? {} : {display: 'none'}} className="deleteBtn" variant="primary" size="sm" onClick={deleteOnClick} disabled={!hasId}><strong>{t('newCollaborator.buttons.delete')}</strong></Button>
+                        <Button type="submit"  size="sm" className="checkSubmitBtn" onClick={onSubmitAndValid}>
                             {!validated  ? `${t('newCollaborator.buttons.checkValues')}` : `${t('newCollaborator.buttons.submit')}`}
                         </Button>
                     </div>

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 
 import './style.css'
 
-const Table = ({ columns, data, onClick }) => {   
+const Table = ({ columns, data, onClick }) => {
     const pageSize = 10
     const [ currentPage, setCurrentPage ] = useState(0)
     const router = useRouter()
@@ -30,11 +30,8 @@ const Table = ({ columns, data, onClick }) => {
         }
     }
 
-    console.log(handleColumnTranslation('name'))
-
     const renderTableHeader = columns => (
         columns.map((column, index) => {
-            console.log(column)
             return <th key={index} className={`th${index}`}>{handleColumnTranslation(column)}</th>
         })
     )
