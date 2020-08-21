@@ -104,5 +104,14 @@ app.put('/collaborators/:id', (req, res) => {
   res.send(collaborator)
 })
 
+app.delete('/:id', (req, res) => {
+  const collaborator = getCollaboratorById(req, res)
+
+  const index = collaborators.indexOf(collaborator)
+  collaborators.splice(index, 1)
+
+  res.send(collaborator)
+})
+
 const port = process.env.PORT || 3001
 app.listen(port, () => console.log(`Listening on port ${port}...`))
