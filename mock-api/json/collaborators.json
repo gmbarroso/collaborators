@@ -337,14 +337,14 @@
     },
     {
         "id": 29,
-        "name": "Leia",
+        "name": "Bobba Fett",
         "position": "Princess",
         "cpf": "999.999.999-99",
         "email": "princess.leia@starwars.com"
     },
     {
         "id": 30,
-        "name": "Darth Vader",
+        "name": "Darth Maul",
         "position": "Sith",
         "cpf": "101.010.101-01",
         "email": "darth.vader@starwars.com"

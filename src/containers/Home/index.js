@@ -29,7 +29,6 @@ const Home = ({ handleId }) => {
   }
 
   const handleSearch = searchValue => {
-    console.log(collaborators.map(c=>c))
     const searchedObjectValues = collaborators.filter(collaborator => {
       const name = collaborator.name.toLowerCase().includes(searchValue.toLowerCase())
       const position = collaborator.position.toLowerCase().includes(searchValue.toLowerCase())

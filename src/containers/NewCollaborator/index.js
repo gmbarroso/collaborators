@@ -33,11 +33,11 @@ const NewCollaborator = ({ collaborator }) => {
         onSubmit: values => ({ values })
     })
 
-    // const handleDisabled = () => {
-    //     if(hasId) {
-    //         setHasId(false)
-    //     } 
-    // }
+    const handleDisabled = () => {
+        if(hasId) {
+            setHasId(false)
+        }
+    }
 
     const onBack = (e) => router.push('/')
 
@@ -61,13 +61,15 @@ const NewCollaborator = ({ collaborator }) => {
     return(
         <Fragment>
             <div className="new">
-                <Button type="button" className="backBtn" variant="primary" size="sm" onClick={onBack}> Voltar </Button>
-                <h3>New Collaborator</h3>
-                {/* <Button type="button" onClick={handleDisabled}>Submit form</Button> */}
+                <span type="button" className="backBtn" variant="primary" size="sm" onClick={onBack}><strong>Go back</strong></span>
+                <div className="headerNew">
+                    <h3>New Collaborator</h3>
+                    <Button type="button" className="editBtn" size="sm" onClick={handleDisabled} disabled={!hasId}>Edit Collaborator</Button>
+                </div>
             </div>
             <div className="newContainer">
                 <div className="photo">
-                    Foto
+                    Photo and Logs
                 </div>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Form.Group controlId="name">
@@ -77,13 +79,13 @@ const NewCollaborator = ({ collaborator }) => {
                                 required
                                 name="name"
                                 type="text"
-                                placeholder="Digite seu nome"
+                                placeholder="Type the collaborator name"
                                 onChange={handleChange}
                                 value={values.name}
                                 disabled={hasId}
                             />
                             <Form.Control.Feedback type="invalid">
-                                Please choose a username.
+                                This name is not valid
                             </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
@@ -94,13 +96,13 @@ const NewCollaborator = ({ collaborator }) => {
                                 required
                                 name="position"
                                 type="text"
-                                placeholder="Qual a posição dele/a na equipe?"
+                                placeholder="Type the collaborator position"
                                 onChange={handleChange}
                                 value={values.position}
                                 disabled={hasId}
                             />
                             <Form.Control.Feedback type="invalid">
-                                Please choose a username.
+                                This position is not valid
                             </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
@@ -110,7 +112,7 @@ const NewCollaborator = ({ collaborator }) => {
                         <Form.Control
                             type="text"
                             name="cpf"
-                            placeholder="CPF"
+                            placeholder="His / Her CPF"
                             aria-describedby="inputGroupPrepend"
                             onChange={handleChange}
                             value={values.cpf}
@@ -118,7 +120,7 @@ const NewCollaborator = ({ collaborator }) => {
                             disabled={hasId}
                         />
                         <Form.Control.Feedback type="invalid">
-                            Please choose a username.
+                            This CPF is not valid
                         </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>
@@ -128,7 +130,7 @@ const NewCollaborator = ({ collaborator }) => {
                         <Form.Control
                             type="email"
                             name="email"
-                            placeholder="E o e-mail?"
+                            placeholder="What about his / her e-mail"
                             aria-describedby="inputGroupPrepend"
                             onChange={handleChange}
                             value={values.email}
@@ -136,12 +138,14 @@ const NewCollaborator = ({ collaborator }) => {
                             disabled={hasId}
                         />
                         <Form.Control.Feedback type="invalid">
-                            Please choose a username.
+                            This e-mail is not valid
                         </Form.Control.Feedback>
                         </InputGroup>
                     </Form.Group>   
                     <div className="submitDiv">
-                        <Button type="submit" onClick={onSubmitAndValid}>Submit form</Button>
+                        <Button type="submit" size="sm" className="checkSubmitBtn" onClick={onSubmitAndValid}>
+                            {!validated  ? 'Check values' : 'Submit changes'}
+                        </Button>
                     </div>
                 </Form>
             </div>

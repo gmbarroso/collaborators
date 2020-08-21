@@ -12,7 +12,7 @@ const Pagination = ({ page, setPage, size, totalItems, itemPerPage }) => {
       </div>
       {
         Array(size).fill(0).map((_, i) => (
-          <Button className="paginationBtn" size="sm" onClick={() => setPage(i)}>
+          <Button key={i} className="paginationBtn" size="sm" onClick={() => setPage(i)}>
             {i}
           </Button>
         ))

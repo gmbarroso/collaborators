@@ -1,27 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { getCollaboratorById } from '../../requests'
 import { useRouter } from '../../hooks'
 import { Pagination } from '../../components'
 
 import './style.css'
 
-const Table = ({ columns, data, onClick }) => {
-    
-    const pageSize = 5
+const Table = ({ columns, data, onClick }) => {   
+    const pageSize = 10
     const [currentPage, setCurrentPage] = useState(0)
-    const [ updateData, setUpdateData ] = useState(data)
     const router = useRouter()
+    const startPointer = currentPage * pageSize;
+    const endPointer = startPointer + pageSize
+    let dataPerPage = data.slice(startPointer, endPointer)
+
     const renderTableHeader = columns => (
         columns.map((column, index) => {
             return <th key={index} className={`th${index}`}>{column.charAt(0).toUpperCase()}{column.slice(1)}</th>
         })
     )
-    
-    const startPointer = currentPage * pageSize;
-    const endPointer = startPointer + pageSize
-    let dataPerPage = data.slice(startPointer, endPointer)
-
-    console.log(dataPerPage)
 
     const renderTableBody = (headers, data) => {
         const goToCollaborator = id => {

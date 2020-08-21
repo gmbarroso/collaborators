@@ -1,6 +1,11 @@
 table{
 	width: 100%;
 	margin-bottom: 36px !important;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: white;
+	border-radius: 8px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 .tableContainer {
@@ -11,8 +16,17 @@ table{
     display: none;
 }
 
-tr:hover {
-    cursor: pointer;
+th:hover {
+	cursor: default;
+}
+
+/* tr:hover {
+	cursor: pointer;
+} */
+
+.table tbody tr:hover td, .table tbody tr:hover th {
+	background-color: #ece0f5;
+	cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

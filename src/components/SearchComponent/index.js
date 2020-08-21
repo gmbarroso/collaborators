@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import './style.css'
 
 const Search = ({search}) => {
   const [searchValue, setSearchValue] = useState("");
@@ -26,7 +27,7 @@ const Search = ({search}) => {
           onChange={handleSearchInputChanges}
           type="text"
         />
-        <input onClick={callSearchFunction} type="submit" value="SEARCH" />
+        <input onClick={callSearchFunction} className="searchBtn" type="submit" value="SEARCH" />
       </form>
     );
 }

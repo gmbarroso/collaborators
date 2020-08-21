@@ -8,19 +8,7 @@ const useForm = ({ initialValues, onSubmit }) => {
     const [onBlur, setOnBlur] = useState(false)
     const [validated, setValidated] = useState(false)
 
-
     const formRendered = useRef(true)
-
-    useEffect(() => {
-        if (formRendered.current) {
-          setValues(initialValues)
-          setErrors({})
-          setTouched({})
-          setOnSubmitting(false)
-          setOnBlur(false)
-        }
-        formRendered.current = false
-      }, [initialValues])
 
     const handleChange = (event) => {
       const { target } = event
@@ -50,6 +38,17 @@ const useForm = ({ initialValues, onSubmit }) => {
       setErrors({ ...errors })
       onSubmit({ values, errors })
     }
+
+    useEffect(() => {
+        if (formRendered.current) {
+          setValues(initialValues)
+          setErrors({})
+          setTouched({})
+          setOnSubmitting(false)
+          setOnBlur(false)
+        }
+        formRendered.current = false
+      }, [initialValues])
 
     return {
         values,
