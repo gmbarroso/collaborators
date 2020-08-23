@@ -1,0 +1,13 @@
+.errorMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 48px 400px 48px 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .errorMessage {
+    margin: 0;
+  }
+}

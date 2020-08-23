@@ -1,4 +1,5 @@
 import React from 'react';
+import { Flags } from '../../components'
 
 import {
   withRouter,
@@ -7,10 +8,11 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css'
 
-const Header = () => {
+const Header = props => {
   return (
     <div className="header">
       <h1 className="marginBtm">Collaboratos App</h1>
+      <Flags language = { props.lang } />
     </div>
   )
 }

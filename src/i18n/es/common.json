@@ -1,0 +1,45 @@
+{
+    "home": {
+        "newCollaboratorBtn": "Nuevo Colaborador",
+        "errorMessage": "No se pudieron cargar los datos. Vuelve a cargar la página o vuelve a intentarlo más tarde."
+    },
+    "search": {
+        "searchBtn": "Buscar"
+    },
+    "table": {
+        "name": "Nombre",
+        "position": "Posición",
+        "cpf": "CPF",
+        "email": "E-mail"
+    },
+    "pagination": {
+        "collaboratorsPerPage": "Colaboradores por página: ",
+        "numberOfCollaborators": "Número de empleados: "
+    },
+    "newCollaborator": {
+        "title": "Nuevo colaborador",
+        "labels": {
+            "name": "Nombre",
+            "position": "Posición",
+            "cpf": "CPF",
+            "email": "E-mail"
+        },
+        "inputs": {
+            "name": "Ingrese el npmbre del colaborador",
+            "position": "Ingrese la posición del colaborador",
+            "cpf": "Ingrese el CPF del colaborador",
+            "email": "Ingrese el e-mail del colaborador"
+        },
+        "errorMessages": {
+            "default": "Este campo es requerido",
+            "email": "Ingrese un e-mail válido"
+        },
+        "buttons": {
+            "goBack": "Volver",
+            "edit": "Editar colaborador",
+            "delete": "Borrar colaborador",
+            "checkValues": "Comprobar valores",
+            "submit": "Enviar"
+        }
+    }
+}

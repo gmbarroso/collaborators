@@ -1,0 +1,60 @@
+table{
+	width: 100%;
+	margin-bottom: 36px !important;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: white;
+	border-radius: 8px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.tableContainer {
+	margin: 48px;
+}
+
+.th0 {
+    display: none;
+}
+
+th:hover {
+	cursor: default;
+}
+
+/* tr:hover {
+	cursor: pointer;
+} */
+
+.table tbody tr:hover td, .table tbody tr:hover th {
+	background-color: #ece0f5;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    table, thead, tbody, th, td, tr { 
+    	display: block; 
+    }
+
+    thead tr { 
+    	position: absolute;
+    	top: -9999px;
+    	left: -9999px;
+    }
+
+    tr { border: 1px solid #ccc; }
+
+    td { 
+    	border: none;
+    	/* border-bottom: 1px solid #eee;  */
+    	position: relative;
+    	padding-left: 50%; 
+    }
+
+    td:before { 
+    	position: absolute;
+    	top: 6px;
+    	left: 6px;
+    	width: 45%; 
+    	padding-right: 10px; 
+    	white-space: nowrap;
+    }
+}

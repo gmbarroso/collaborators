@@ -1,36 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 .home {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     flex-direction: column;
     font-family: 'Open Sans', sans-serif;
 }
 
-.container {
+.searchContainer {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    font-family: 'Open Sans', sans-serif;
+    margin: 0 48px 0 48px;
 }
 
-.searchContainer button {
-    padding: 3px 9px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
+.search {
+    background-color: #e5e5e5
 }
-  
-.searchContainer button:hover {
-    background: #ccc;
+
+.newCollaboratorBtn, .newCollaboratorBtn:disabled {
+    margin-bottom: 48px;
+    background-color: #4B0082;
+    border-color: #4B0082;
+}
+
+.newCollaboratorBtn:hover:enabled {
+    margin-bottom: 48px;
+    background-color: white;
+    color: #4B0082;
+    border-color: #4B0082;
 }
 
 @media screen and (max-width: 768px) {
     .home {
       flex-direction: column;
+      align-items: center;
       justify-content: center;
+    }
+
+    .searchContainer {
+        flex-direction: column-reverse;
+        justify-content: center;
+        margin-bottom : 16px;
+    }
+
+    .newCollaboratorBtn {
+        margin-bottom: 48px;
     }
 }
