@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import './style.css'
 
-const Search = ({search}) => {
+const Search = ({ search, error}) => {
   const { t } = useTranslation('common')
   const [searchValue, setSearchValue] = useState("")
   
@@ -28,6 +28,7 @@ const Search = ({search}) => {
           value={searchValue}
           onChange={handleSearchInputChanges}
           type="text"
+          disabled={error}
         />
         <input onClick={callSearchFunction} className="searchBtn" type="submit" value={`${t('search.searchBtn')}`} />
       </form>

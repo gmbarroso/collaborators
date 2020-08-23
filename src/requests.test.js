@@ -31,13 +31,14 @@ describe('test the requests from the application', () => {
   it('if it gets a collaborator by its Id', async () => {
     const collaboratorId = 1
     await getCollaboratorById(collaboratorId)
-      .then(result => { 
+      .then(result => {
+        const resultKeysArray = Object.keys(result)
         expect(Object(result, result)).toBe(result)
         expect(result.id).toEqual(collaboratorId)
-        expect(Object.keys(result)).toContain('name')
-        expect(Object.keys(result)).toContain('position')
-        expect(Object.keys(result)).toContain('cpf')
-        expect(Object.keys(result)).toContain('email')
+        expect(resultKeysArray).toContain('name')
+        expect(resultKeysArray).toContain('position')
+        expect(resultKeysArray).toContain('cpf')
+        expect(resultKeysArray).toContain('email')
       })
   })
   it('if it is possible to add a new collaborator', async () => {

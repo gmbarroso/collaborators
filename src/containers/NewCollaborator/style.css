@@ -55,6 +55,7 @@ form {
     color: #4B0082;
     border: none;
     margin-bottom: 24px;
+    background-color: #e5e5e5;
 }
 
 .backBtn:hover {

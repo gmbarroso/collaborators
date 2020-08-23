@@ -55,14 +55,25 @@ const Home = ({ handleId }) => {
     <Fragment>
       <div className="home">
           <div className="searchContainer">
-            <Search search={handleSearch} />
-            <Button className="newCollaboratorBtn" variant="primary" size="sm" onClick={onClickNewCollaborators}> { t('home.newCollaboratorBtn') } </Button>
+            <Search
+              search={handleSearch}
+              error={collaborators.length === 0}
+            />
+            <Button
+              className="newCollaboratorBtn"
+              variant="primary"
+              size="sm"
+              onClick={onClickNewCollaborators}
+              disabled={collaborators.length === 0}
+            >
+                { t('home.newCollaboratorBtn') }
+            </Button>
           </div>
           <div className="content">
             <Table
-                columns = { Object.keys(columns) }
-                data = {collaborators}
-                onClick = {handleId}
+              columns = { Object.keys(columns) }
+              data = {collaborators}
+              onClick = {handleId}
             />
             {/* Tratar tablea vazia */}
           </div>

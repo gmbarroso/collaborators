@@ -72,7 +72,7 @@ const NewCollaborator = ({ collaborator }) => {
     return(
         <Fragment>
             <div className="new">
-                <span type="button" className="backBtn" variant="primary" size="sm" onClick={onBack}><strong>{t('newCollaborator.buttons.goBack')}</strong></span>
+                <button type="button" className="backBtn" variant="primary" size="sm" onClick={onBack}><strong>{t('newCollaborator.buttons.goBack')}</strong></button>
                 <div className="headerNew">
                     <h3>{t('newCollaborator.title')}</h3>
                     {collaborator &&

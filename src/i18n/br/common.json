@@ -1,6 +1,7 @@
 {
     "home": {
-        "newCollaboratorBtn": "Novo colaborador"
+        "newCollaboratorBtn": "Novo colaborador",
+        "errorMessage": "Os dados não puderam ser carregados. Recarregue a página ou tente novamente mais tarde"
     },
     "search": {
         "searchBtn": "Pesquisar"

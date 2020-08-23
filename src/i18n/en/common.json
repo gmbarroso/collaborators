@@ -1,6 +1,7 @@
 {
     "home": {
-        "newCollaboratorBtn": "New collaborator"
+        "newCollaboratorBtn": "New collaborator",
+        "errorMessage": "The data could not be loaded. Reload the page or try again later"
     },
     "search": {
         "searchBtn": "Search"

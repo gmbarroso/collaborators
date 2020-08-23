@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import { getCollaboratorById } from '../../requests'
 import { useRouter } from '../../hooks'
-import { Pagination } from '../../components'
+import { Pagination, ErrorMessage } from '../../components'
 import { useTranslation } from 'react-i18next'
 
 import './style.css'
@@ -74,21 +74,28 @@ const Table = ({ columns, data, onClick }) => {
 
     return (
         <div id="tableContainer" className="tableContainer">
-            <table className="table table-bordered table-striped table-hover">
-              <thead>
-                  <tr>
-                      {renderTableHeader(columns)}
-                  </tr>
-              </thead>
-              {renderTableBody(columns, dataPerPage)}
-            </table>
-            <Pagination
-                page = {currentPage}
-                setPage = {setCurrentPage}
-                size = {Math.ceil(data.length / pageSize)}
-                totalItems = {data.length}
-                itemPerPage = {dataPerPage.length}
-            />
+          {data.length !== 0 &&
+            <Fragment>
+              <table className="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        {renderTableHeader(columns)}
+                    </tr>
+                </thead>
+                {renderTableBody(columns, dataPerPage)}
+              </table>
+              <Pagination
+                  page = {currentPage}
+                  setPage = {setCurrentPage}
+                  size = {Math.ceil(data.length / pageSize)}
+                  totalItems = {data.length}
+                  itemPerPage = {dataPerPage.length}
+              />
+            </Fragment>
+          }
+          {data.length === 0 &&
+            <ErrorMessage message={t('home.errorMessage')} />
+          }
         </div>
     )
 }
