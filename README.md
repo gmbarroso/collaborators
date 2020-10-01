@@ -1,6 +1,6 @@
 ## Collaborators APP
 
-This is a project to train some React Hooks skills as a test. I made a simple API in `NodeJS` and I have built some custom hooks for this project.
+This is a project to train some React Hooks skills in a more structure project. I made a simple API in `NodeJS` and I have built some custom hooks.
 
 ### Let's get started
 - `git clone` this repo to your local system
@@ -37,15 +37,15 @@ The major route for this application and the only one for now is `/collaborators
 ### What I am implementing?
 - You will find a simple CURL API with `get`, `post`, `put` and `delete` methods
 - All of those methods updates the render in a table
-- As the name of the file says, I'm mocking the date for this table.
+- As the name of the file says, I'm mocking the data for this table.
 
 ### Running tests
-During the implementation of this app, I only did tests for the front and it still wasn't enough alongside what I would have liked to have done. The tests that I made was unit test for the front, testing the requisitions, if it manages correctly the collaborators. My idea was to test the components at the same time that test the app in e2e tests with `cypress` but, as I said, didn't have time to do it.
+During the implementation of this app, I only did tests for the front and it still wasn't enough alongside what I would have liked to have done. So, for other further versions I hope to cover this app with more tests. The tests that I made was unit test for the front, testing the requisitions, if it manages correctly the collaborators. My idea was to test the components at the same time that test the app in e2e tests with `cypress` but, as I said, I'll make it for further versions.
 
 - `node` or `nodemon mock-api/app.js`
 - `yarn test`
 
 ### Some further notes
-Plese, notice that I developed this application in to the `develop` branch. I merge it in to the `master` branch. The `develop` branch is still open so you can see my commits. My commit messages will help you to see how I think while I developed the containers and components of the application.
+Please, notice that I developed this application in to the `develop` branch. I merge it in to the `master` branch. The `develop` branch is still open so you can see my commits. My commit messages will help you to see how I think while I developed the containers and components of the application.
 
 

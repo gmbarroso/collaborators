@@ -17,7 +17,6 @@ const array = []
 const Home = ({ handleId }) => {
   const { t } = useTranslation('common')
   const [ collaborators, setCollaborators ] = useState(array)
-  // const { next, prev, jump, currentData, currentPage, maxPage } = usePagination()
 
   const router = useRouter()
 

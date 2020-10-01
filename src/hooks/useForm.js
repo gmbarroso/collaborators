@@ -13,7 +13,6 @@ const useForm = ({ initialValues, onSubmit }) => {
     const handleChange = (event) => {
       const { target } = event
       const { name, value } = target
-      // event.persist()
       setValues({ ...values, [name]: value })
     }
 

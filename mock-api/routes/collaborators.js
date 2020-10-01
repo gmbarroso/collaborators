@@ -61,12 +61,6 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   const collaborator = getCollaboratorById(req, res)
 
-  // const { error } = validateCollaboratorsObj(req, res)
-  // if (error) {
-  //   console.log(error)
-  //   return res.status(400).send(error.details[0].message)
-  // }
-
   collaborator.name = req.body.name
   collaborator.position = req.body.position
   collaborator.cpf = req.body.cpf

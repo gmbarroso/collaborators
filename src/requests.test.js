@@ -84,13 +84,4 @@ describe('test the requests from the application', () => {
       expect(Object.values(firstValues)).not.toBe(secondValues)
     })
   })
-  // it('if it is possible to delete a collaborator by the id', async () => {
-  //   await Promise.all([
-  //     getCollaborators(),
-  //     deleteCollaborator(31),
-  //     getCollaborators()
-  //   ]).then(results => {
-  //     expect(results[0][1]).not.toEqual(results[2][1])
-  //   })
-  // })
 })

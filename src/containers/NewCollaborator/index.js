@@ -28,11 +28,8 @@ const NewCollaborator = ({ collaborator }) => {
     }
     const {
         values,
-        // errors,
-        // touched,
         validated,
         handleChange,
-        // handleBlur,
         handleSubmit
     } = useForm({
         initialValues,
